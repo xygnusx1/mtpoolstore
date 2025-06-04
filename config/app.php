@@ -2,6 +2,10 @@
 
 return [
 
+    'custdbBaseDir' => '/Users/tosh/Library/CloudStorage/SynologyDrive-sync-to-store/pap034cust/',
+    'custdb_active' => '/Users/tosh/Library/CloudStorage/SynologyDrive-sync-to-store/pap034cust/',
+    'custdb_done' => '/Users/tosh/Library/CloudStorage/SynologyDrive-sync-to-store/pap034cust/_DONE/',
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -13,7 +17,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'My Pool Store'),
+    'name' => env('My Pool Store', 'My Pool Store'),
 
     /*
     |--------------------------------------------------------------------------
@@ -124,12 +128,12 @@ return [
     ],
 
 //    'providers' => [
-//
 //        /*
 //        * Laravel Framework Service Providers...
 //        */
 //
-//        MongoDB\Laravel\MongoDBServiceProvider::class,
+//        \App\Providers\YouTrackServiceProvider::class,
+////        MongoDB\Laravel\MongoDBServiceProvider::class,
 //    ],
 
 ];

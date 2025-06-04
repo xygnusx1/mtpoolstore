@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>YouTrack</title>
 
         <link rel="icon" href="/favicon.ico" sizes="any">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -21,6 +21,12 @@
         </style>
     </head>
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-    {{ $issue->title }}
+
+    <h2>Users</h2>
+    <ul>
+        @foreach ($yti as $item)
+        <li>{{ $item->id }} : {{$item->name}}</li>
+        @endforeach
+    </ul>
     </body>
 </html>

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\Issues\IssueController;
+use App\Http\Controllers\YouTrackController;
+use App\Http\Controllers\CustomerController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,6 +13,11 @@ Route::get('/', function () {
 Route::get('/phpinfo', function () {
     return view('phpinfo');
 })->name('phpinfo');
+
+Route::get('/cust', [CustomerController::class, 'getAllCustomers'])->name("cust");
+Route::get('/cust/{id}', [CustomerController::class, 'getCustomer'])->name("cust-info");
+Route::get('/storage/cust/{id}', [CustomerController::class, 'getMedia'])->name("cust-docs");
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -25,5 +32,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/issue/{slug}', [IssueController::class, 'show']);
+Route::get('/ytissue/{slug}', [YouTrackController::class, 'show']);
 
 require __DIR__.'/auth.php';
